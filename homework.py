@@ -62,8 +62,9 @@ def get_api_answer(timestamp):
         )
     if response.status_code != HTTPStatus.OK:
         error = (
-            f'{ENDPOINT}, {HEADERS}, {timestamp} не доступен'
-            f'{response.status_code}'
+            f'При запросе к {ENDPOINT}, {HEADERS}, {timestamp} API'
+            f'произошла ошибка, код ответа {response.status_code}'
+            f'{response.text}'
         )
         raise exceptions.HTTPStatusError(error)
     return response.json()
@@ -111,17 +112,17 @@ def main():
     while True:
         try:
             response = get_api_answer(timestamp)
-            homework = check_response(response)
-            if homework != []:
-                message = parse_status(homework[0])
+            homeworks = check_response(response)
+            if homeworks != []:
+                message = parse_status(homeworks[0])
             else:
                 message = 'Список работ пуст'
             if message != last_message:
                 send_message(bot, message)
-                timestamp = int(time.time())
                 last_message = message
             else:
                 logging.debug('Отсутствие в ответе новых статусов')
+            timestamp = response.get('current_date')
         except Exception as error:
             message = f'Сбой в работе программы: {error}'
             logging.error(message, exc_info=True)
