@@ -37,4 +37,4 @@ touch .env
 python homework.py
 ``` 
 
-#### Автор [Горин Евгений](https://github.com/Excellent-84)
+#### Автор: [Горин Евгений](https://github.com/Excellent-84)
