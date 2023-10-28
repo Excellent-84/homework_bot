@@ -17,13 +17,12 @@ git clone https://github.com/Excellent-84/homework_bot.git
 #### Cоздать и активировать виртуальное окружение:
 ``` 
 cd homework_bot
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 ``` 
 
 #### Установить зависимости из файла requirements.txt:
 ``` 
-python -m pip install --upgrade pip
 pip install -r requirements.txt
 ``` 
 
@@ -34,7 +33,7 @@ touch .env
 
 #### Запустить проект:
 ``` 
-python homework.py
+python3 homework.py
 ``` 
 
 #### Автор: [Горин Евгений](https://github.com/Excellent-84)
