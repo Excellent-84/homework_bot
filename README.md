@@ -5,8 +5,8 @@
 Логирует свою работу и сообщает о важных проблемах сообщением в Telegram.
 
 ### Стек технологий:
-* ##### Python
-* ##### python-telegram-bot
+<img src="https://img.shields.io/badge/Python-FFFFFF?style=for-the-badge&logo=python&logoColor=3776AB"/>
+<img src="https://img.shields.io/badge/python telegram bot-FFFFFF?style=for-the-badge&logo=&logoColor=082E08"/>
 
 ### Как запустить проект:
 #### Клонировать репозиторий и перейти в него в командной строке:
